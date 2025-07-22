@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Models\Voiture;
 use Illuminate\Http\Request;
 
@@ -12,7 +13,10 @@ class VoitureController extends Controller
      */
     public function index()
     {
-        //
+    $ressultadatabase=Voiture::all();
+  
+    return view('voitures.liste', compact('ressultadatabase'));
+  
     }
 
     /**
@@ -20,7 +24,7 @@ class VoitureController extends Controller
      */
     public function create()
     {
-        //
+         return ("bonsoir tout le monde");
     }
 
     /**
@@ -36,7 +40,7 @@ class VoitureController extends Controller
      */
     public function show(Voiture $voiture)
     {
-        //
+       
     }
 
     /**

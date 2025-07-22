@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\VoitureController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -14,6 +15,6 @@ Route::get('teste2',function() {
 Route::get('navigation',function(){
    return view('nav');
 });
-Route::get('voitures',function(){
-   return view('voitures.liste');
-});
+
+Route::get('voitures',[VoitureController::class,'index']);
+Route::get('voitures/create',[VoitureController::class,'create']);
