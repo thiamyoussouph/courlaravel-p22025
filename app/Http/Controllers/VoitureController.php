@@ -24,7 +24,7 @@ class VoitureController extends Controller
      */
     public function create()
     {
-         return ("bonsoir tout le monde");
+         return view('voitures.form');
     }
 
     /**
@@ -32,7 +32,14 @@ class VoitureController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $voiture = new Voiture();
+        $voiture->marque = $request->input('marque');
+        $voiture->modele=$request->input('modele');
+        $voiture->matricule=$request->input('matricule');
+        $voiture->prix=$request->input('prix');
+        $voiture->save();
+        return redirect()->route('voitures.index');
+        
     }
 
     /**
